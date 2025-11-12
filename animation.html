@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border: 2px solid black;
+            position: relative;
+            left: 100px;
+            top: 100px;
+            animation-duration: 4s;
+            animation-name: bubba;
+            animation-iteration-count: 5;
+            animation-timing-function: ease;
+        }
+        @keyframes bubba{
+            from{
+                height: 200px;
+                width: 200px;
+                background-color: rgb(218, 165, 95);
+                border: 5px double darkgreen;
+                border-radius: 70px;
+            }
+            to{
+                height: 50px;
+                width: 50px;
+                background-color: rgb(239, 238, 227);
+                border: 4px dashed rgb(39, 88, 212);
+                border-radius: 30px;
+                transform: translateX(100px);
+                transform: scale(2,3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>
