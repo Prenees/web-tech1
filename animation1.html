@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 50%;
+            background-color: rgb(88, 226, 53);
+            background-image: linear-gradient(red,yellow,black);
+            animation-duration: 5s;
+            animation-name: dora;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        @keyframes dora 
+        {
+            0%{
+                height: 250px;
+                width: 250px;
+                border-radius: 50px;
+                background-color: black;
+                border: 5px double white;
+                transform: translateX(500px);
+            }
+            20%{
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                background-color: rgb(13, 14, 13);
+                border: 7px dashed rgb(62, 216, 234);
+                
+            }
+            60%{
+                 height: 350px;
+                width: 350px;
+                border-radius: 70%;
+                background-color: rgb(237, 134, 31);
+                border: 10px double rgb(230, 54, 218);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>
