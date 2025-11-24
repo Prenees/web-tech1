@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+         #parent{
+            height: 160px;
+            width: 607px;
+            /* display: flex; */
+         }
+         body{
+            display: flex;
+            justify-content: center;
+            background-color: lightgrey;
+         }
+            #top{
+                 /* display: flex;
+                flex-direction: column;  */
+               padding-top: 20px;
+                height: 170px;
+                width: 582px;
+                /* border: 1px solid black; */
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                padding-left: 25px;
+                box-shadow: 8px 5px 5px 5px grey;
+            }
+            #top>h2{
+                color: rgb(46, 110, 110);
+            }
+            #top>h3{
+                color: rgb(138, 175, 5);
+            }
+            #top>p{
+                color: gray;
+            }
+            #bot1{
+                color: white;
+                background-color: rgb(45, 132, 158);
+            }
+            #bot2{
+                color: white;
+                background-color: rgb(80, 149, 176);;
+            }
+            .box{
+                display: flex;
+                height: 250px;
+                width: 290px;
+                /* border: 1px solid black; */
+                padding-left: 25px;
+            }
+            #bottom{
+                display: flex;
+                border-radius: 20px;
+                box-shadow: 8px 5px 5px 5px grey;
+            }
+            #price{
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+            }
+            #price>p{
+                padding-left: 10px;
+                font-size: large;
+            }
+            input{
+                height: 40px;
+                width: 170px;
+                background-color:rgb(138, 175, 5);
+                color: white;
+                border: 1px solid  rgb(138, 175, 5);
+                border-radius: 10px;
+                text-align: center;
+                font-size: 18px;
+            }
+            #inp{
+                display: flex;
+                justify-content: center;
+                position: relative;
+                top: 10px;
+            }
+            #bot1>#mid{
+                padding-bottom: 50px;
+                line-height: 1;
+            }
+            #bot1{
+                 border-bottom-left-radius: 20px;
+            }
+            #bot2{
+                border-bottom-right-radius: 20px;
+            }
+            #bot2>#mid2{
+                padding-bottom: 50px;
+                line-height: 0.7;
+            }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="top">
+            <h2>join our community</h2>
+            <h3>30-day,hassle-free money back guarantee</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit vel numquam iste voluptatum atque cupiditate Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div id="bottom">
+            <div id="bot1" class="box">
+                <div id="mid">
+                    <h3>Monthly Subscription</h3>
+                    <div id="price">
+                    <h2>$29</h2>
+                    <p>per month</p>
+                    </div>
+                    <p>Full access for less than $1 a day</p>
+                    <div id="inp">
+                        <input type="text" value="Sign Up">
+                    </div>
+                </div>
+              
+            </div>
+            <div id="bot2" class="box">
+                <div id="mid2">
+                    <h3>Why Us</h3>
+                    <p>Tutorial by industry expert</p>
+                    <p>Peer & expert code review</p>
+                    <p>Coding Exercise</p>
+                    <p>Access to our Github Repos</p>
+                    <p>Community Forum</p>
+                    <p>Flashcard decks</p>
+                    <p>New videos every week</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
