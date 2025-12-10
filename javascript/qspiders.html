@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        box-sizing: border-box;
+        }
+        #parent{
+            height: 90px;
+            width: 1528px;
+            border: 2px solid black;
+            /* background-color: aqua; */
+            border-radius: 20px;
+        }
+        #parent>ul{
+            display: flex;
+            align-items: center;
+            list-style: none;
+            justify-content: flex-end;
+            gap: 60px;
+            position: relative;
+            top: 30px;
+        }
+        #parent>ul>li:hover{
+            cursor: pointer;
+            color: red;
+        }
+        #parent>img{
+            position: absolute;
+            bottom: 660px;
+            height: 60px;
+            width: 100px;
+        }
+        #top{
+            display: flex;
+            height: 450px;
+            border: 1px solid black;
+            background-color: rgb(216, 210, 199);
+        }
+        #top1{
+            width: 500px;
+            margin-left: 80px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+            <div id="parent">
+                <img src="./img/Screenshot 2025-12-08 185833.png" alt="">
+                <ul>
+                    <li>All Courses</li>
+                    <li>Offline Centers</li>
+                    <li>Online Courses</li>
+                    <li>Corprate Training</li>
+                    <li>Hire from Us</li>
+                    <li>Placements</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div id="top">
+                <div id="top1">
+                    <h1>Largest Software</h1>
+                    <h2>Training Oraganization</h2>
+                    <p>World's premier software training institution, dedicated to bridging the gap between industry demands and academic curricula. With centers worldwide, Qspiders provides a platform for young minds to cultivate successful careers.</p>
+                    <input type="button" value="Book Demo">
+                </div>
+                <div id="top2">
+                        <img src="https://qspiders.com/landingHomeImg.png" alt="">
+                </div>
+            </div>
+</body>
+</html>

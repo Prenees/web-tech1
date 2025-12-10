@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Creating an object by using construtor
+
+        let person=new Object()
+        person.name="Dora"
+        person.age=15
+        person.city="Chuti Tv"
+
+        console.log(person)
+
+
+        // Creating an object by using literal way
+
+        let obj={
+            name:"Bujji",
+            age:14,
+            city:"Chuti Tv"
+        }
+
+        console.log(obj)
+
+
+        // inorder to get single value
+
+        console.log(obj.name)
+        console.log(obj.city)
+        console.log(obj.age)
+
+
+        // inorder to add single value
+
+        obj.country="India"
+        console.log(obj)
+
+        obj.food="Candy"
+        console.log(obj)
+
+
+        // Inorder to remove entire entity from object...we use delete
+
+        delete obj.age
+        console.log(obj)
+
+
+        // Object methods
+
+        let obj1={
+            name:"John",
+            age:25,
+            city:"Kingsland"
+        }
+
+        console.log(obj1)
+
+        // Keys------It is used to return array of keys separately from the object
+
+        console.log(Object.keys(obj1))
+
+        // Values--It is used to return array of Values separately from the object
+
+        console.log(obj1)
+        console.log(Object.values(obj1))
+
+        // Entries----It is used to return both keys and values in the form of array from the entire object
+
+        console.log(obj1)
+        console.log(Object.entries(obj1))
+
+        // seal----It is used to update the exusting valus inside the object but we cannot modify the object with new values
+
+
+        console.log(obj1)
+
+        obj1.food="Breads"
+        console.log(obj1)
+        // console.log(Object.seal(obj1))
+
+        obj1.name="Aegon"
+        console.log(obj1)
+
+        obj1.dinks="Wine"
+        console.log(obj1)
+
+
+        // Is Sealed-----Its is used to check if the object is sealed or not...if the object sealed it return true or else false
+
+        console.log(Object.isSealed(obj1))
+
+        // Freeze-----If it is freezed we cannot update the existing valus and also we cannot even modify
+        console.log(obj1)
+
+        obj1.game="war"
+        console.log(obj1)
+
+
+        console.log(Object.freeze(obj1))
+
+        obj1.movie="drama"
+        console.log(obj1)
+
+        // Is Frozen-----It is used to check whether the object is freezed or not...if it is freezed it return true or else false
+
+        console.log(Object.isFrozen(obj1))
+
+
+    </script>
+</body>
+</html>

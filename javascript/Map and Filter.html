@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,11,22,33,44,55,66,77,]
+        console.log(arr)
+
+        // Normal way..
+        // Index value..
+        console.log(arr[4])
+        console.log(arr[6])
+        // Destructuring..
+        let[a,b,c,d,e,f,g,h]=arr
+        console.log(e)
+        console.log(c)
+
+        // Map...Variable.map((value)=>console.log(value))
+
+        arr.map((Dora)=>console.log(Dora))
+
+        let names=["Raj","Buji","Bunty","Chota"]
+        console.log(names)
+        names.map((a)=>console.log(a))
+
+
+        // Filter......
+        let arr1=[10,20,30,400,700,900]
+        console.log(arr1)
+
+        // Normal way using index value...
+
+        console.log(arr1[2])
+        console.log(arr1[4])
+
+        // Filter.....Variable.filter((val)=>condition)
+
+        let x=arr1.filter((Dora)=>Dora>300)
+        console.log(x)
+
+        let z=arr1.filter((Dora)=>Dora<300)
+        console.log(z)
+
+
+        let birds=["Dove","Peacock","hen","Eagle","Sparrow"]
+        console.log(birds)
+
+        let k=birds.filter((val)=>val=="Peacock" || val=="hen")
+        console.log(k)
+
+    </script>
+</body>
+</html>

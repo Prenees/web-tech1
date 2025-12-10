@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Homogenous
+        let arr=[10,20,30,40,50,60]
+        console.log(arr)
+
+        // Inorder to get single value from array....Index value
+        console.log(arr[4])
+        console.log(arr[0])
+
+
+        // Hetrogenous
+        let names=["Raja",8n,20,"Dora",120,"Chinnu"]
+        console.log(names)
+
+        // Inorder to add single value inside array.....
+
+        names[6]="bujji"
+        console.log(names)
+        names[10]=180
+        console.log(names)
+
+
+        console.log(names[3])
+        console.log(names[7])
+
+
+
+        // push...It is used to add an value or an element at the ending of the array
+
+        let arr1=["Dora","Jully","Uncle",20,"John"]
+        console.log(arr1)
+
+        arr1.push("Beema")
+        console.log(arr1)
+
+        arr1.push("Dragon")
+        console.log(arr1)
+
+        // pop....it is useed to remove the value or element at ending of the array
+
+        arr1.pop()
+        console.log(arr1)
+
+        arr1.pop()
+        console.log(arr1)
+
+        // Shift..it is used to remove the value or element at starting of the array
+
+        arr1.shift()
+        console.log(arr1)
+
+        // Unshift ...it is used to add the value or elemrnt at starting of the array
+
+        arr1.unshift("jackie")
+        console.log(arr1)
+
+        arr1.unshift("Dora")
+        console.log(arr1)
+
+        // Indexof----it is used to provide the index value for the particular element from the entire array
+
+        console.log(arr1)
+        let a=arr1.indexOf("Dora")
+        console.log(a)
+        let b=arr1.indexOf("Jully")
+        console.log(b)
+
+
+        // At-----It si used to provide single element from the entire array...where we have to pass or provide the index value
+
+        let c=arr1.at(1)
+        console.log(c)
+
+        let d=arr1.at(4)
+        console.log(d)
+
+
+        // Slice---it is used to extract the value from the entire array..where is will not affect thr original array...
+
+        console.log(arr1)
+        let g=arr1.slice(0,2)
+        console.log(g)
+        console.log(arr1)
+
+        // Splice..it is used to extract the value from the entire array..where is will affect thr original array...
+
+        // console.log(arr1)
+        // let h=arr1.splice(0,2)
+        // console.log(h)
+        // console.log(arr1)
+
+        // Includes------is is used to check whether the value is present or not.....if it is present it will return true or else false
+            console.log(arr1)
+
+            let p=arr1.includes("Jully")
+            console.log(p)
+            console.log(arr1)
+
+            let q=arr1.includes("Papa")
+            console.log(q)
+            console.log(arr1)
+
+
+            // Join-----It is used to Join two array elements where it is mandatory to provide the value
+            console.log(arr1)
+
+            let x=arr1.join(" the great ")
+            console.log(x)
+
+            // Reverse-----it is used to reverse the entire array
+
+            console.log(arr1)
+
+            let y=arr1.reverse()
+            console.log(y)
+    </script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Var
+        {
+            console.log("-----var---")
+            var a
+            a=10
+            console.log(a)
+            
+            var a
+            a=20
+            console.log(a)
+
+            var a
+            a=30
+            console.log(a)
+        }
+        console.log(a) //access outside
+
+        // let
+        {
+            console.log("-----let-----")
+            let b
+            b=20
+            console.log(a)
+
+            // let a  (Re-Declration not possible)
+            b=40
+            console.log(b)  
+        }
+        // console.log(b) -cannot access outside block 
+
+
+        // Const
+        {
+            console.log("-----Const------")
+            // const c -declaration not possible
+            // c=10    - initialization not not possible
+
+            const c=50 ; // Both declaration and initialization is possible
+            console.log(c)
+
+            // const c=100  Both re-declaration and re-initialization not posible
+        }
+        // console.log(c) -cannot access outside block
+
+
+
+        // Hoisting
+        // Var
+        console.log(h)
+        var h=20;
+        // Let
+        console.log(b)
+        let b=40;
+        // Const
+        console.log(c)
+        const c=60;
+    </script>
+</body>
+</html>

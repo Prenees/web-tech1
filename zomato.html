@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #parent{
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        #top{
+            display: flex;
+            height: 80px;
+            width: 70%;
+            /* border: 2px solid black; */
+            justify-content: space-around;
+            align-items: center;
+            /* position: relative; */
+        }
+        #top>p{
+          font-family: sans-serif;
+          color: grey;
+        }
+        #top>p:hover{
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+        #top>h2{
+          font-variant: small-caps;
+          font-size: 40px;
+          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #top1>p:hover{
+          cursor: pointer;
+        }
+
+       .search-merge{
+         display: flex;
+         align-items: center;
+         background-color: white;
+         border-radius: 10px;
+         padding: 4px;           
+         gap: 0; 
+         box-shadow:5px 5px 5px 3px lightgray;
+         /* overflow:hidden; */
+       }
+       .search-merge input{
+         border: none;
+         padding: 15px;
+         font-size: 14px;
+         outline: none;
+         /* background: transparent; */
+         width: 450px;
+       }
+       .search-merge>.search-left{
+         margin-left: 15px;
+         width: 150px;
+       }
+       .search-merge>.search-right{
+         margin-left: 30px;
+       }
+       .search-merge>.icon{
+         position: absolute;
+         right: 69.5%;
+         transform: rotate(180deg);
+         font-size: larger;
+         color: red;
+       }
+       .search-merge>.icon1{
+         position: absolute;
+         right: 60%;
+         color: grey;
+       }
+        .search-merge>.icon2{
+         position: absolute;
+         right: 58.5%;
+         color: grey;
+         transform: rotate(90deg);
+       }
+       .search-merge>.icon3{
+         position: absolute;
+         right: 57.5%;
+         color: grey;
+       }
+       #top1{
+         margin-left: 250px;
+         margin-top: 20px;
+         word-spacing: 5px;
+         font-size: smaller;
+         color: gray;
+       }
+       #but{
+         margin-left: 250px;
+         display: flex;
+         width: 350px;
+         /* border: 1px solid black; */
+         justify-content: space-between;
+       }
+       #but>input{
+         height: 35px;
+         width: 90px;
+         border-radius: 8px;
+         border: 1px solid grey;
+         text-align: center;
+         font-size: 15px;
+       }
+       #but,#but>input:hover{
+         cursor: pointer;
+       }
+       .filter{
+         position: absolute;
+         left: 265px;
+         top: 147px;
+         color: grey;
+       }
+       .down{
+         position: absolute;
+         left:587px;
+         top: 147px;
+         color: grey;
+       }
+       #top2{
+         height: 350px;
+         /* width: 100%; */
+         /* border: 1px solid black; */
+         /* margin-left: 250px; */
+         /* width: 1100px; */
+         background-color:rgb(248, 248, 248);;
+         padding-top: 20px;
+         margin-top: 35px;
+       }
+       #top2>div>p{
+         color: rgb(28, 28, 28);
+         font-family: Arial, Helvetica, sans-serif;
+         margin-left: 250px;
+         font-size: 40px;
+         margin-top: 20px;
+       }
+       #food1{
+         display: flex;
+         /* flex-wrap: wrap; */
+         justify-content: center;
+         gap: 40px;
+         width: 1050px;
+         margin-left: 250px;
+         text-align: center;
+         align-items: center;
+       }
+       #food1>div>img{
+         display: flex;
+         height: 150px;
+         width: 150px;
+       }
+       #food1>div>img,h3:hover{
+         cursor: pointer;
+       }
+       .f{
+         border-radius: 75px;
+       }
+       #mid1>div>p{
+         color: rgb(28, 28, 28);
+         font-family: Arial, Helvetica, sans-serif;
+         margin-left: 250px;
+         font-size: 40px;
+         margin-top: 20px;
+       }
+       #brands{
+         display: flex;
+         margin-top: 30px;
+         width: 1050px;
+         justify-content: center;
+         text-align: center;
+         align-items: center;
+         margin-left: 250px;
+         gap:35px;
+       }
+       #brands>div>img{
+             display: flex;
+             height: 150px;
+             width: 150px;
+       }
+       .brand>img{
+         border-radius: 70px;
+       }
+       .brand:hover{
+        cursor: pointer;
+       }
+       #head{
+         margin-left: 240px;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: x-large;
+       }
+       /* #restaurent{
+         display: flex;
+         justify-content:center;
+         gap: 25px;
+       } */
+       .restaurent{
+         display: flex;
+         justify-content: center;
+         gap: 30px;
+         margin-top: 20px;
+      }
+      .fd{
+        height: 350px;
+        width: 340px;
+        border-radius: 20px;
+      }
+      .fd:hover{
+        cursor: pointer;
+        background-color:white;
+        border-radius: 20px;
+        box-shadow: 4px 4px 5px 3px lightgrey;
+      }
+      .fd>img{
+        height: 250px;
+        width: 330px;
+        margin-left: 5px;
+        margin-top: 10px;
+        border-radius: 20px;
+      }
+      .fd>.fd1>.cont{
+        display: flex;
+        height: 30px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        justify-content: space-between;
+      }
+      .star1{
+        font-size: 7px;
+        padding-left: 2px;
+        padding-top: 10px;
+      }
+      .rupee{
+        font-size: 10px;
+      }
+      span{
+        background-color: green;
+        color: white;
+        border-radius: 5px;
+      }
+      .fd>.fd1>#cont1{
+        display: flex;
+        height: 20px;
+        margin-left: 15px;
+        justify-content: space-between;
+        color: grey;
+      }
+      .fd>.fd1{
+        display: flex;
+        flex-direction: column;
+      }
+      .fd1{
+        position: relative;
+      }
+      #time{
+        display: flex;
+        position: absolute;
+        left: 290px;
+        top: 55px;
+        font-size: 14px;
+      }
+
+      /* Footer Part */
+      
+       #foot1{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        margin-left: 200px;
+       }
+       #footer{
+        background-color: rgb(248, 248, 248);
+        margin-top: 20px;
+       }
+       #footer>#foot2{
+        display: flex;
+        /* margin-left: 250px; */
+        justify-content: center;
+        gap: 80px;
+       }
+       #media{
+        display: flex;
+        flex-direction: column;
+       }
+       #media>img{
+        height: 50px;
+        width: 150px;
+        padding: 10px;
+       }
+       /* #foot2>#about1{
+        width: 150px;
+        border: 1px solid black;
+       } */
+       #foot1>h3{
+              font-size: 50px;
+              font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       }
+       #foot1>.but2{
+          position: relative;
+          left: 650px;
+       }
+       #foot2{
+        padding-bottom: 50px;
+       }
+       #foot2 h4{
+        font-size: smaller;
+        font-weight: lighter;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+       }
+       #foot2 p{
+        color:rgb(105, 105, 105);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: smaller;
+       }
+       #foot2 p:hover{
+          cursor: pointer;
+          color: black;
+       }
+       .but2>input{
+              height: 40px;
+              width: 100px;
+              padding-right: 40px;
+              font-size: 15px;
+       }
+       .but2>input:hover{
+        cursor: pointer;
+       }
+
+</style>
+</head>
+<body>
+
+  <!-- Nav bar -->
+  <div id="parent1">
+  
+    <div id="parent">
+        <div id="top">
+            <h2>zomato</h2>
+            <div class="search-merge">
+            <input class="search-left" type="search" placeholder="Hubli">
+            <input class="search-right" type="search" placeholder="Search for restaurent ,cusines or dish">
+            <i class="fa-solid fa-fire-flame-simple icon"></i>
+            <i class="fa-solid fa-sort-down icon1"></i>
+            <i class="fa-solid fa-window-minimize icon2"></i>
+            <i class="fa-solid fa-magnifying-glass icon3"></i>
+            </div>
+            <p>Log In</p>
+            <p>SignUp</p>
+        </div>
+    </div>
+        <div id="top1">
+          <p>Home / india / Hubli Restaurent</p>
+        </div>
+        <div id="but">
+          <i class="fa-solid fa-sliders filter"></i>
+          <i class="fa-solid fa-angle-down down"></i>
+          <input type="button" value="Filter">
+          <input type="button" value="Pure Veg">
+          <input type="button" value="Cusines">
+        </div>
+        <!-- Food for your Inspiration -->
+        <div id="top2">
+          <div>
+            <p>Inspiration for your first order</p>
+          </div>
+         <div id="food1">
+         <div> 
+          <img src="https://b.zmtcdn.com/data/o2_assets/bf2d0e73add1c206aeeb9fec762438111727708719.png" alt="">
+          <h3>Briyani</h3>
+        </div>
+         <div> 
+         <img alt="image" src="https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png" class="f">
+          <h3>Pizza</h3>
+        </div>
+         <div> 
+          <img src="https://b.zmtcdn.com/data/dish_images/197987b7ebcd1ee08f8c25ea4e77e20f1634731334.png" alt="">
+          <h3>Chicken</h3>
+        </div>
+         <div> 
+          <img src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png" alt="">
+          <h3>Burger</h3>
+        </div>
+         <div> 
+          <img src="https://b.zmtcdn.com/data/o2_assets/e444ade83eb22360b6ca79e6e777955f1632716661.png" alt="" class="f">
+          <h3>Fried Rice</h3>
+        </div>
+        <div> 
+          <img src="https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png" alt="" class="f">
+          <h3>Thali</h3>
+        </div>
+        </div>
+       </div>
+       <!-- Most Famous Brands -->
+       <div id="mid1">
+         <div>
+            <p>Top Brands for you</p>
+          </div>
+       </div>
+       <div id="brands">
+            <div class="brand">
+              <img src="https://b.zmtcdn.com/data/brand_creatives/logos/3c1ecff4906d10645e3ab6f2a3ea475d1757927223.png?output-format=webp" alt="">
+              <h3>Hotel Sree Ganesh</h3>
+              <p>28 min</p>
+            </div>
+            <div class="brand">
+              <img src="https://b.zmtcdn.com/data/brand_creatives/logos/f1dc700c8be881b9a17be904971a0644_1726638965.png?output-format=webp" alt="">
+              <h3>KFC</h3>
+              <p>30 min</p>
+            </div>
+            <div class="brand">
+                <img src="https://b.zmtcdn.com/data/brand_creatives/logos/3d80cb89fca9e212f7dab2c1914ebd8f_1643983859.png?output-format=webp" alt="">
+                <h3>McDonalds</h3>
+                <p>25 min</p>
+            </div>
+            <div class="brand">
+              <img src="https://b.zmtcdn.com/data/brand_creatives/logos/3d13c85bbda3e7ce252d9da01b07c478_1760092437.png?output-format=webp" alt="">
+              <h3>Pizza Hut</h3>
+              <p>28 min</p>
+            </div>
+            <div class="brand">
+              <img src="https://b.zmtcdn.com/data/brand_creatives/logos/efc7ad8e009519d31073cb9bc668723a1719147837.png?output-format=webp" alt="">
+              <h3>Kabab Factory</h3>
+              <p>26 min</p>
+            </div>
+            <div class="brand">
+              <img src="https://b.zmtcdn.com/data/brand_creatives/logos/cb356dca5717dc819a3c601cc4340009_1762946236.png?output-format=webp" alt="">
+              <h3>Polar Bear Ice Creams</h3>
+              <p>30 min</p>
+            </div>
+        </div>
+        <div id="head">
+          <h2>Hubli Restaurent</h2>
+        </div>
+        <!-- All fooods -->
+        <div class="restaurent">
+
+          <div class="fd">
+            <img src="https://b.zmtcdn.com/data/pictures/2/18940522/dc732baa13b95652e47001f3775f1cf5_o2_featured_v2.jpg?output-format=webp" alt="">
+            <div class="fd1">
+              <div class="cont">
+              <h4>Hotel Moonlight</h4>
+              <p class="star"><span>4.2<i class="fa-solid fa-star star1"></i></span></p>
+            </div>
+              <div id="cont1">
+                <p>Briyani,North India....</p>
+                <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+              </div>
+              <div id="time">
+                <p>20 min</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fd">
+            <img src="https://b.zmtcdn.com/data/pictures/4/19700384/22cde0c65c7afa92557454cf692de99e_o2_featured_v2.jpg?output-format=webp" alt="">
+            <div class="fd1">
+              <div class="cont">
+              <h4>KFC</h4>
+              <p class="star"><span>4.2<i class="fa-solid fa-star star1"></i></span></p>
+            </div>
+              <div id="cont1">
+                <p>Burger,Fastfood,Rolls....</p>
+                <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+              </div>
+              <div id="time">
+                <p>20 min</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/7/18876827/bf7a406143ca8706f27b3a8a6289dd95_o2_featured_v2.jpg?output-format=webp" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Lizza Restaurent</h4>
+                <p class="star"><span>4.2<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>North Indian,Western...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+                </div>
+                    <div id="time">
+                      <p>20 min</p>
+                    </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="restaurent">
+           <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/9/21663559/d0e7f5be9ee7526ecabd7c5cc83418d0_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Veg Meals By LunchBox</h4>
+                <p class="star"><span>4.2<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Briyani,North India,Veg...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+                </div>
+                    <div id="time">
+                      <p>20 min</p>
+                    </div>
+            </div>
+          </div>
+          <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/1/18581071/f562f418f6348d95b003f1a2be23be34_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Lazzi Shop</h4>
+                <p class="star"><span>3.7<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Bevereges,Juices,Dessert..</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>100 for one</p>
+                </div>
+                    <div id="time">
+                      <p>20 min</p>
+                    </div>
+            </div>
+          </div>
+
+         <div class="fd">
+                      <img src="https://b.zmtcdn.com/data/pictures/7/20385527/4482b0adf50561abac8705f4782e8ced_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>New Cury Restaurent</h4>
+                <p class="star"><span>4.6<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Tamil,South Indian</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>100 for one</p>
+                </div>
+                    <div id="time">
+                      <p>20 min</p>
+                    </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+        <div class="restaurent">
+           <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/7/20257987/9f48700806b211972d94fbc77c63a2dd_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>The Tandoori Chicken</h4>
+                <p class="star"><span>3.8<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>North Indian,Chinees...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>150 for one</p>
+                </div>
+                    <div id="time">
+                      <p>35 min</p>
+                    </div>
+            </div>
+          </div>
+          <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/1/21097351/0b661a45b0612911cc69da50cccfa871_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>EZ Bites</h4>
+                <p class="star"><span>3.7<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Fast food,Sandwitch...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+                </div>
+                    <div id="time">
+                      <p>30 min</p>
+                    </div>
+            </div>
+          </div>
+
+         <div class="fd">
+                      <img src="https://b.zmtcdn.com/data/pictures/6/18627516/dec9e454de6ac18ec408eda357a9f872_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Fb Cakes</h4>
+                <p class="star"><span>4.6<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Dessert,Bakery,Cakes..</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>100 for one</p>
+                </div>
+                    <div id="time">
+                      <p>20 min</p>
+                    </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+             <div class="restaurent">
+           <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/2/18936372/613b9a1a8e03aec869656a3f9f600d51_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>The Burger Man</h4>
+                <p class="star"><span>3.8<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Burger,Salad,Pizza..</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+                </div>
+                    <div id="time">
+                      <p>39 min</p>
+                    </div>
+            </div>
+          </div>
+          <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/5/19960225/39fe5026fa425441c8b83f4475fca082_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Hotel Jai</h4>
+                <p class="star"><span>3.5<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Fast food,Sawarma...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>150 for one</p>
+                </div>
+                    <div id="time">
+                      <p>34 min</p>
+                    </div>
+            </div>
+          </div>
+
+         <div class="fd">
+                      <img src="https://b.zmtcdn.com/data/pictures/4/66614/7ff99e1899455b872ad7205356df8983_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Ibaco</h4>
+                <p class="star"><span>4.6<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Ice Creams..</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>150 for one</p>
+                </div>
+                    <div id="time">
+                      <p>20 min</p>
+                    </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+               <div class="restaurent">
+           <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/6/21006456/12bf01ba16e38e0e17a1b696fccc443b_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Pizza Hut</h4>
+                <p class="star"><span>3.8<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Pizza,Fast Food...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>150 for one</p>
+                </div>
+                    <div id="time">
+                      <p>35 min</p>
+                    </div>
+            </div>
+          </div>
+          <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/5/20921425/241ecb52ed0b12ebabb581ab3e48a39c_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Sri Chetinadu</h4>
+                <p class="star"><span>3.4<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Briyani,South Indian...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+                </div>
+                    <div id="time">
+                      <p>41 min</p>
+                    </div>
+            </div>
+          </div>
+
+         <div class="fd">
+                      <img src="https://b.zmtcdn.com/data/pictures/2/19360092/b6cc50933b22e208f84960ab6b1d9006_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Foopries</h4>
+                <p class="star"><span>4.6<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Beverages,Juices,Shake..</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>100 for one</p>
+                </div>
+                    <div id="time">
+                      <p>39 min</p>
+                    </div>
+            </div>
+          </div>
+        </div>
+
+
+
+         <div class="restaurent">
+           <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/0/18876060/b73c9ac92aaf46c5a9f63244c6bb4388_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Hotel Panjurulli</h4>
+                <p class="star"><span>4.9<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Chicken,Briyani....</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>250 for one</p>
+                </div>
+                    <div id="time">
+                      <p>27 min</p>
+                    </div>
+            </div>
+          </div>
+          <div class="fd">
+                 <img src="https://b.zmtcdn.com/data/pictures/9/21665629/1f326952073d7b5fa54a148848c3cb31_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Crisspy Zone</h4>
+                <p class="star"><span>3.4<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Chinees,Fast Food...</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+                </div>
+                    <div id="time">
+                      <p>50 min</p>
+                    </div>
+            </div>
+          </div>
+
+         <div class="fd">
+                      <img src="https://b.zmtcdn.com/data/pictures/3/19619903/21c544e626cbf40a91c8b236014b2682_o2_featured_v2.jpg" alt="">
+            <div class="fd1">
+              <div class="cont">
+                <h4>Polar bear Ice Cream</h4>
+                <p class="star"><span>4.4<i class="fa-solid fa-star star1"></i></span></p>
+              </div>
+                <div id="cont1">
+                  <p>Ice Cream,Beverages,Juices,Shake..</p>
+                  <p> <i class="fa-solid fa-indian-rupee-sign rupee"></i>200 for one</p>
+                </div>
+                    <div id="time">
+                      <p>24 min</p>
+                    </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+    <div id="footer">
+        <div id="foot1">
+            <h3>zomato</h3>
+            <div class="but2">
+                <input type="button" value="India" >
+                <input type="button" value="English">
+            </div>
+        </div>
+        <div id="foot2">
+            <div id="about1">
+                  <h4>About Zomato</h4>
+                  <p>Who we are</p>
+                  <p>Blog</p>
+                  <p>Work with us</p>
+                  <p>Investor Realation</p>
+                  <p>Report Fraud</p>
+                  <p>Press Kit</p>
+                  <p>Contact Us</p>
+            </div>
+            <div id="about2">
+                  <h4>Zomaverse</h4>
+                  <p>zomato</p>
+                  <p>Blinkit</p>
+                  <p>District</p>
+                  <p>Feeding India</p>
+                  <p>Hyperpure</p>
+                  <p>zomato Live</p>
+                  <p>zomoland</p>
+                  <p>Weather Union</p>
+            </div>
+            <div id="about3">
+                    <h4>For Restaurent</h4>
+                    <p>Partner With us</p>
+                    <p>Apps for you</p>
+            </div>
+            <div id="about4">
+                  <h4>Learn More</h4>
+                  <p>Privacy</p>
+                  <p>Security</p>
+                  <p>Terms</p>
+            </div>
+             <div id="about5">
+                  <h4>Social Links</h4>
+                      <a href="https://www.linkedin.com/company/zomato/?originalSubdomain=in"><svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA"><path d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM7.0625 8.375H4.75V15.4375H7.0625V8.375ZM7.25 6.1875C7.25 5.5 6.75 5 5.9375 5C5.125 5 4.5625 5.5 4.5625 6.1875C4.5625 6.875 5.0625 7.4375 5.875 7.4375C6.6875 7.4375 7.25 6.875 7.25 6.1875ZM15.5 11.375C15.5 9.1875 14.3125 8.1875 12.8125 8.1875C11.5625 8.1875 11 8.875 10.6875 9.375V8.375H8.375C8.375 9.0625 8.375 15.4375 8.375 15.4375H10.6875V11.5C10.6875 11.3125 10.6875 11.0625 10.75 10.9375C10.9375 10.5 11.3125 10.0625 11.9375 10.0625C12.75 10.0625 13.125 10.6875 13.125 11.6875V15.4375H15.4375C15.5 15.4375 15.5 11.375 15.5 11.375Z"></path></svg></a>
+                      <a href="https://www.instagram.com/zomato/"><svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA"><path d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM10.1875 5C8.8125 5 8.625 5 8.0625 5C7.5 5.0625 7.125 5.125 6.8125 5.25C6.5 5.375 6.1875 5.5625 5.875 5.875C5.5625 6.1875 5.375 6.4375 5.25 6.8125C5.125 7.125 5 7.5 5 8.0625C5 8.625 5 8.75 5 10.1875C5 11.625 5 11.8125 5.0625 12.375C5.0625 12.9375 5.1875 13.3125 5.3125 13.625C5.4375 13.9375 5.625 14.25 5.9375 14.5625C6.1875 14.8125 6.5 15 6.875 15.1875C7.1875 15.3125 7.5625 15.4375 8.125 15.4375C8.6875 15.4375 8.875 15.5 10.25 15.5C11.6875 15.5 11.875 15.5 12.4375 15.4375C13 15.375 13.375 15.3125 13.6875 15.1875C14 15.0625 14.3125 14.875 14.625 14.5625C14.9375 14.25 15.125 14 15.25 13.625C15.375 13.3125 15.5 12.875 15.5 12.375C15.5625 11.8125 15.5625 11.625 15.5625 10.1875C15.5625 8.75 15.5625 8.625 15.5 8.0625C15.5 7.5 15.375 7.125 15.25 6.8125C15.125 6.4375 14.9375 6.1875 14.625 5.875C14.375 5.625 14.0625 5.4375 13.6875 5.25C13.375 5.125 12.9375 5.0625 12.4375 5C11.8125 5 11.625 5 10.1875 5ZM9.75 5.9375C9.875 5.9375 10.0625 5.9375 10.1875 5.9375C11.5625 5.9375 11.75 5.9375 12.3125 5.9375C12.8125 5.9375 13.0625 6.0625 13.25 6.125C13.5 6.25 13.6875 6.375 13.875 6.5C14.0625 6.625 14.1875 6.8125 14.25 7.125C14.3125 7.3125 14.4375 7.5625 14.4375 8.0625C14.5 8.625 14.5 8.8125 14.5 10.1875C14.5 11.5625 14.5 11.75 14.4375 12.3125C14.4375 12.8125 14.3125 13.125 14.25 13.3125C14.1875 13.5625 14.0625 13.6875 13.875 13.9375C13.6875 14.125 13.5 14.1875 13.25 14.3125C13.0625 14.375 12.8125 14.5 12.3125 14.5C11.75 14.5 11.5625 14.5625 10.1875 14.5625C8.8125 14.5625 8.625 14.5625 8.0625 14.5C7.5625 14.5 7.3125 14.375 7.125 14.3125C6.875 14.1875 6.6875 14.125 6.5 13.9375C6.3125 13.75 6.1875 13.5625 6.125 13.3125C6.0625 13.125 6 12.875 5.9375 12.3125C5.9375 11.75 5.9375 11.625 5.9375 10.1875C5.9375 8.8125 5.9375 8.625 5.9375 8.0625C6 7.5625 6.0625 7.3125 6.125 7.125C6.25 6.875 6.375 6.6875 6.5 6.5C6.625 6.3125 6.875 6.1875 7.125 6.125C7.3125 6.0625 7.5625 5.9375 8.0625 5.9375C8.5625 5.9375 8.75 5.9375 9.75 5.9375ZM13 6.8125C12.6875 6.8125 12.375 7.0625 12.375 7.4375C12.375 7.8125 12.625 8.0625 13 8.0625C13.375 8.0625 13.625 7.8125 13.625 7.4375C13.625 7.0625 13.3125 6.8125 13 6.8125ZM10.1875 7.5C8.75 7.5 7.5 8.6875 7.5 10.1875C7.5 11.6875 8.6875 12.875 10.1875 12.875C11.6875 12.875 12.875 11.6875 12.875 10.1875C12.875 8.6875 11.6875 7.5 10.1875 7.5ZM10.1875 8.4375C11.125 8.4375 11.9375 9.1875 11.9375 10.1875C11.9375 11.1875 11.1875 11.9375 10.1875 11.9375C9.25 11.9375 8.4375 11.1875 8.4375 10.1875C8.4375 9.1875 9.25 8.4375 10.1875 8.4375Z"></path></svg></a>
+                      <a href="https://x.com/zomato"><svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA"><title>twitter-circle</title><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512"><path d="M256 0c141.385 0 256 114.615 256 256S397.385 512 256 512 0 397.385 0 256 114.615 0 256 0z"></path><path fill="#fff" fill-rule="nonzero" d="M318.64 157.549h33.401l-72.973 83.407 85.85 113.495h-67.222l-52.647-68.836-60.242 68.836h-33.423l78.052-89.212-82.354-107.69h68.924l47.59 62.917 55.044-62.917zm-11.724 176.908h18.51L205.95 176.493h-19.86l120.826 157.964z"></path></svg></svg></a>
+                      <a href="https://www.youtube.com/zomato"><svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA"><path d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM15.1875 7.4375C15.0625 7 14.6875 6.625 14.25 6.5C13.4375 6.25 10.1875 6.25 10.1875 6.25C10.1875 6.25 6.9375 6.25 6.125 6.5C5.6875 6.625 5.3125 7 5.1875 7.4375C5 8.25 5 10 5 10C5 10 5 11.75 5.25 12.5625C5.375 13 5.75 13.375 6.1875 13.5C7 13.75 10.25 13.75 10.25 13.75C10.25 13.75 13.5 13.75 14.3125 13.5C14.75 13.375 15.125 13 15.25 12.5625C15.5 11.75 15.5 10 15.5 10C15.5 10 15.4375 8.25 15.1875 7.4375ZM9.25 11.75V8.5L11.875 10.125L9.25 11.75Z"></path></svg></a>
+                      <a href="https://www.facebook.com/zomato"><svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA"><path d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM10.75 15.4375V10.1875H12.1875L12.375 8.375H10.75V7.5C10.75 7.0625 10.8125 6.8125 11.5 6.8125H12.375V5H10.9375C9.1875 5 8.625 5.875 8.625 7.3125V8.375H7.5V10.1875H8.5625V15.4375C8.5625 15.4375 10.75 15.4375 10.75 15.4375Z"></path></svg></a>
+                       <div id="media">
+                        <img alt="image" src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" loading="lazy" class="sc-s1isp7-5 fyZwWD">
+                        <img alt="image" src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" loading="lazy" class="sc-s1isp7-5 fyZwWD">
+                       </div>
+            </div>
+        </div>
+        <div id="foot3">
+
+        </div>
+    </div>
+</body>
+</html>

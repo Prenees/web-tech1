@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Named Function
+    //     function dora(){
+    //         console.log("Hi Doraa")
+    //     }
+    //     dora()
+
+    //     // --------------
+    //     function add(a,b){
+    //         return a+b
+    //     }
+    //     // console.log(add(20,40))
+    //     // or
+    //     let x=add(20,40)
+    //     console.log(x)
+
+
+    //     // Function Expresions
+    //    let a=function bujji(){
+    //         console.log("Hii Bujjiii")
+    //     }
+    //     a()
+
+    //     // Anonymous Function
+    //     let b=function(a,b){
+    //         console.log("Hiiii bhaiii")
+    //         return a*b
+    //     }
+    //     console.log(b(10,5))
+
+    //     // nested Function
+    //     function parent(){
+    //         console.log("I am Parent")
+    //         function child(){
+    //             console.log("I am child")
+    //         }
+    //         child()
+    //         function baby(){
+    //             console.log("I am baby")
+    //         }
+    //         baby()
+    //     }
+    //     parent()
+
+        // -----------------------
+
+        // function sub(a,b){  ------>Doubt
+        //     return a-b
+        //     function mul(x,y){
+        //         return x*y
+        //     }
+        //     console.log(mul(5,5))
+        // }
+        // console.log(sub(20,10))
+
+
+        // IIFE
+        (
+            function(){
+                console.log("HIIIIIII")
+            }
+        )
+        ()
+
+        // Arrow funtion
+
+        let m=()=>{
+            console.log("Hiii arrow function")
+        }
+        m()
+
+
+        // By using single value
+        let add=(num)=>num+100
+        console.log(add(200))
+
+        // By using two values
+        let sub=(a,b)=>{
+            return a-b
+        }
+        console.log(sub(30,15))
+        // or
+        let z=sub(40,20)
+        console.log(z)
+
+        // Call back function
+        // Single value
+        function add1(a){
+            console.log("I am add")
+            a()
+        }
+        add1(function bhaii(){
+        console.log("I am bhaii")
+        }
+    )
+
+    // Two value
+    function parent1(a,b){
+        console.log("I am parent")
+        a()
+        b()
+    }
+    parent1(function child1(){
+        console.log("I am child1")
+    }, function child2(){
+        console.log("I am child2")
+    })
+
+    // Higher order function
+
+    function calculate(x){
+        return x+2000
+    }
+    function bonus(z,y){
+        let res=z(y)
+        console.log(res)
+    }
+    bonus(calculate,1000)
+    </script>
+</body>
+</html>
